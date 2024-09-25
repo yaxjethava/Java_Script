@@ -1,0 +1,29 @@
+<script>
+
+    function gst(x) {
+        return x + (x * 0.18);;
+    }
+
+    function discount(priceGst) {
+
+        let cal = null;
+
+        if (priceGst >= 1000) {
+            cal = priceGst - (priceGst * 0.10);
+
+        } else {
+            cal = priceGst;
+        }
+        return cal;
+    }
+
+    let price = parseFloat(prompt('Enter the bill value:'));
+
+    let priceGst = gst(price);
+
+    let discountPrice = discount(priceGst);
+
+    console.log(`GST : ${priceGst}`);
+    console.log(`Discounted Price :${discountPrice}`);
+
+</script>
