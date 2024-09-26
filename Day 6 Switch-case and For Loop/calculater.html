@@ -1,0 +1,63 @@
+<script>
+    function add(x, y) {
+        return x + y;
+    }
+
+    function sub(x, y) {
+        return x - y;
+    }
+
+    function multi(x, y) {
+        return x * y;
+    }
+
+    function div(x, y) {
+        return x / y;
+    }
+
+    function mod(x, y) {
+        return x % y;
+    }
+
+    function power(x) {
+        return x * x;
+    }
+
+    let method = parseFloat(prompt(`Enter the method number as below:       1.Addition         2.Substraction         3.Multipliction          4.Divition          5.Modulo           6.Power`));
+
+    if (method <= 5){
+
+        let num1=parseFloat(prompt('Enter the number 1:'));
+        let num2=parseFloat(prompt('Enter the number 2:'));
+
+        switch (method){
+
+            case 1:
+                console.log(`${num1} + ${num2} =  ${add(num1,num2)}`);
+                break;
+
+            case 2:
+                console.log(`${num1} - ${num2} =  ${sub(num1,num2)}`);
+                break;
+
+            case 3:
+                console.log(`${num1} * ${num2} =  ${multi(num1,num2)}`);
+                break;
+
+            case 4:
+                console.log(`${num1} / ${num2} =  ${div(num1,num2)}`);
+                break;
+
+            case 5:
+                console.log(`${num1} % ${num2} =  ${mod(num1,num2)}`);
+                break;
+        }
+    }else if(method==6){
+
+        let num=parseFloat(prompt('Enter the number for getting power :'));
+        console.log(`${num} * ${num} = ${power(num)}`);
+
+    }else {
+        console.log('This method is not valid');
+    }
+</script>
