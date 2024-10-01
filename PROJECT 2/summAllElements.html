@@ -1,0 +1,17 @@
+<script>
+
+    let arr = [];
+    let n = parseFloat(prompt('Enter Array length'));
+    let total = null;
+
+    for (let i = 0; i < n; i++) {
+
+        let number = parseFloat(prompt('Enter number' + (i + 1)));
+        arr.push(number);
+        total += number;
+
+    }
+
+    console.log(arr);
+    console.log(total);
+</script>
