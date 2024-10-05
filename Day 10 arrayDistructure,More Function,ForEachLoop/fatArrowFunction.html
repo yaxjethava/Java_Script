@@ -1,0 +1,20 @@
+<script>
+// ES6 Fat arrow Function
+    let table = (x)=> {
+
+        for (let i = 1; i <= 10; i++) {
+            let cal = i * x;
+            console.log(`${x} x ${i} = ${cal}`);
+        }
+    }
+
+    let powar=(n)=>{
+        return n*n;
+    }
+
+    let number=parseFloat(prompt('Enter the number for table and pawor'));
+    let call=table(number);
+    let powarCall=powar(number);
+    console.log(`The power of ${number}: ${powarCall}`);
+
+</script>
