@@ -1,0 +1,21 @@
+<script>
+    function dupli(str) {
+
+        let s = [];
+        let result = [];
+
+        for (i = 0; i < str.length; i++) {
+            if (str[i] === s) {
+                result.push(str[i]);
+            } else {
+                s = str[i];
+            }
+        }
+        return result;
+    }
+
+    let string = 'Hello';
+    let call = dupli(string);
+
+    console.log(call.join('  '));
+</script>

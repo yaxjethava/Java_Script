@@ -1,0 +1,24 @@
+<script>
+//For search duplicate charachter from given string
+
+    let dupli = (s) => {
+        let arr = [];
+
+        for (let i = 0; i < s.length; i++) {
+            for (let j = i + 1; j < s.length; j++)
+
+                if (s[i] === s[j]) {
+                    arr.push(s[j]);
+                }
+
+        }
+        return arr;
+    }
+
+    let str = prompt('Enter any string');
+
+    let result = dupli(str);
+
+    console.log(result);
+
+</script>

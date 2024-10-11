@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>onclick event on mouse</title>
+
+    <style>
+        button {
+            width: 18%;
+            height: 60px;
+            border: none;
+            background-color: #0fdbff;
+            color: black;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            transition: 0.4s all ease-in-out;
+            background-color: #105fc0;
+            color: rgb(255, 255, 255);
+        }
+
+        img {
+            width: 400px;
+        }
+
+        .box {
+            width: 95%;
+            display: flex;
+            justify-content: space-evenly;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="https://media.rolex.com/image/upload/q_auto:eco/f_auto/c_limit,w_1600/v1708403332/rolexcom/collection/family-pages/professional-watches/sea-dweller/citizen-of-the-deep/professional-watches-sea-dweller-citizen-of-the-deep-new-face-of-diving-m126603-0001-2210jva-0021"
+        alt="Rolex">
+
+    <div class="box">
+        <button onclick="buy()">Buy Now</button>
+        <button ondblclick="addcard()">Add to card</button>
+        <button onmouseenter="welcom()">Welcome</button>
+        <button onmouseleave="by()">Log out</button>
+        <button onmouseover="hover()">hover</button>
+    </div>
+    <script>
+        let buy = () => {
+            window.location.href = 'https://www.amazon.in/';
+        }
+
+        let addcard = () => {
+            alert('You are add this product to your card')
+        }
+
+        let welcom = () => {
+
+            setTimeout(() => {
+                alert('Welcome to our website' + ' ' + name);
+
+            }, 1000);
+        }
+
+        let by = () => {
+
+            setTimeout(() => {
+                alert('By by,' + name);
+
+            }, 1000);
+        }
+
+        let hover = () => {
+            let sName = prompt('Enter Surname');
+            let age = parseFloat(prompt('Enter your Age'));
+
+            if (age > 18) {
+                alert(`You are eligibale for Voting ${name} ${sName}`);
+
+            } else {
+                alert(`You are not eligibale for Voting ${name} ${sName}`);
+            }
+        }
+        let name = prompt('enetr your name')
+
+    </script>
+</body>
+
+</html>
