@@ -1,0 +1,35 @@
+!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crate element</title>
+</head>
+
+<body>
+
+    <button onclick="addHTML()">Add element</button>
+
+
+    <script>
+        let body = document.querySelector('body');
+
+        function addHTML() {
+
+            let text = prompt('Add text');
+            let image = prompt('Add image link');
+            let heading = document.createElement('h1');
+            let imageHTML = document.createElement('img');
+
+            heading.textContent = text;
+            imageHTML.src = image;
+
+
+            body.appendChild(heading);
+            body.appendChild(imageHTML);
+        }
+    </script>
+</body>
+
+</html>

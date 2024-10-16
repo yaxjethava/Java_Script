@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+            justify-content: center;
+            background-size: cover;
+            background-position: center;
+            background-image: url(https://i0.wp.com/image-0.uhdpaper.com/wallpaper/sunrise-landscape-scenery-clouds-sky-digital-art-hd-wallpaper-uhdpaper.com-769@0@i.jpg?ssl=1);
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: #000000;
+        }
+
+        form {
+            width: 370px;
+            height: auto;
+            background-color: rgba(255, 255, 255, 0.162);
+            padding: 28px;
+            border-radius: 10px;
+            backdrop-filter: blur(5px);
+        }
+
+        form>label {
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fffffff3;
+        }
+
+        form>input {
+            width: 100%;
+            padding: 12px;
+            border-radius: 5px;
+            margin-top: 10px;
+            border: none;
+            outline: none;
+            font-size: 0.95rem;
+            background-color: rgba(255, 255, 255, 0.16);
+            border-bottom: 2px solid #121F3B;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            border: 3px solid transparent;
+            background-color: #0E2443;
+            font-size: 1.1rem;
+            
+            font-weight: bold;
+            border-radius: 20px;
+            margin-top: 40px;
+            cursor: pointer;
+            color: white;
+        }
+
+        button:hover {
+            transition: all 0.4s ease-in-out;
+            background-color: #00000000;
+            color: #0E2443;
+            border: 3px solid #0E2443;
+            box-sizing: border-box;
+        }
+
+        @media(max-width:395px) {
+            form {
+                width: 90%;
+                height: auto;
+                padding: 28px;
+            }
+
+            h1 {
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <form id="registration_form">
+
+        <h1>Sign In</h1>
+
+        <label>First name</label><br>
+        <input type="text" required><br><br>
+
+        <label>Second name</label><br>
+        <input type="text" required><br><br>
+
+        <label>Email </label><br>
+        <input type="email" required><br><br>
+
+        <label>Phone No.</label><br>
+        <input type="tel" required ><br><br>
+
+        <button type="submit">Sign up</button>
+    </form>
+
+
+    <script>
+        let form = document.getElementById('registration_form');
+        let input = form.querySelectorAll('input');
+
+        // click event on Sign In button 
+        form.addEventListener('submit', (event) => {
+            event.preventDefault();
+
+            // for itrete all value of input tag's in Form
+            for (let i = 0; i < input.length; i++) {
+
+                console.log(input[i].value);
+            }
+            setTimeout(() => {
+
+                // for add alert when user click sign in
+                alert(`Hello, ${input[0].value} ! Welcom to our website`);
+
+                window.location.href = 'https://portfolio-yax.netlify.app/';
+            },0);
+
+
+
+        })
+
+    </script>
+</body>
+
+</html>

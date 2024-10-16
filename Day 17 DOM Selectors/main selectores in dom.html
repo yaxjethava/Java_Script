@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Selector's practice</title>
+</head>
+
+<body>
+
+    <h1 id="heading">Hello World!</h1>
+
+    <img class="img"
+        src="https://media.rolex.com/image/upload/q_auto:eco/f_auto/c_limit,w_1600/v1708403332/rolexcom/collection/family-pages/professional-watches/sea-dweller/citizen-of-the-deep/professional-watches-sea-dweller-citizen-of-the-deep-new-face-of-diving-m126603-0001-2210jva-0021"
+        alt="Rolex Watch" width="25%">
+
+
+    <div class="box">box1</div>
+    <div class="box">box2</div>
+
+    <script>
+
+        let h1 = document.getElementById('heading');
+        let image = document.querySelector('.img');
+        let divs = document.querySelectorAll('.box');
+
+
+        // for take a value of an attribute
+        let att = image.getAttribute('src');
+
+        // otheer method for take attribute value
+        console.log(image.src);
+
+        console.log(divs[0].textContent);
+        console.log(divs[1].textContent);
+        console.log(h1.textContent);
+        console.log(att);
+
+    </script>
+</body>
+
+</html>

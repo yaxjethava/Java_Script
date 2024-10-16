@@ -49,6 +49,7 @@ function back() {
 for (let i = 0; i < btns.length; i++) {
 
     btns[i].addEventListener('click', () => {
+                
         //assaing preesed text in variabale
         const textInbtn = btns[i].textContent;
 
