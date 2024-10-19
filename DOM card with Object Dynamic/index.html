@@ -14,16 +14,16 @@
 <body>
 
     <header>
-        <nav class="main-navbar">
+        <nav id="main-navbar">
             <div class="logo">
                 X-cars
             </div>
 
             <ul>
-                <li><a href="">Home</a></li>
-                <li><a href="">Blogs</a></li>
-                <li><a href="">Articals</a></li>
-                <li><a href="">F & Q</a></li>
+                <li><a href="#hero-section">Home</a></li>
+                <li><a href="#cards-main-section">My cars</a></li>
+                <li><a href="">Blog</a></li>
+                <li><a href="#reg_form">My Account</a></li>
             </ul>
 
             <div class="search">
@@ -33,7 +33,7 @@
 
 
             <button class="btn">
-                <a href="#">
+                <a href="#reg_form">
                     Sign In
                 </a>
             </button>
@@ -48,7 +48,7 @@
             <div class="right-side-small-nav">
 
                 <button class="btn">
-                    <a href="#">
+                    <a href="#reg_form">
                         Sign In
                     </a>
                 </button>
@@ -75,7 +75,7 @@
                         blanditiis at quam totam explicabo eaque </p>
 
                     <button class="Explore-btn">
-                        <a href="#">
+                        <a href="#cards-main-section">
                             Let's explore
                         </a>
                     </button>
@@ -99,34 +99,81 @@
             </div>
         </section>
 
-        <section id="form">
+        <section id="reg_form">
 
-            <form id="reg_form">
+            <form id="form">
 
                 <h2>Registration form</h2>
 
                 <label>First name</label><br>
-                <input type="text" name="fname" placeholder="First Name"><br><br>
+                <input type="text" name="fname" placeholder="First Name" required><br><br>
 
                 <label>Last name</label><br>
-                <input type="text" name="lname" placeholder="Last Name"><br><br>
+                <input type="text" name="lname" placeholder="Last Name" required><br><br>
 
                 <label>Email id</label><br>
-                <input type="email" name="email" placeholder="Email id"><br><br>
+                <input type="email" name="email" placeholder="Email id" required><br><br>
 
                 <label>Contact number</label><br>
-                <input type="tel" name="num" placeholder="Contact number"><br><br>
+                <input type="tel" name="num" placeholder="Contact number" required><br><br>
 
                 <label>Question</label><br>
-                <input type="text" name="question" placeholder="Your question"><br><br>
+                <input type="text" name="question" placeholder="Your question" required><br><br>
+
+                <label>Your photo</label><br>
+                <input type="text" name="num" placeholder="Add link of your photo" required><br><br>
 
                 <button type="submit">
                     Submit Now
                 </button>
             </form>
 
+            <div id="output">
+
+                <!-- <div class="display_photo">
+                    <div class="dp_div">
+                        <img src="https://img.freepik.com/free-photo/cheerful-indian-businessman-smiling-closeup-portrait-jobs-career-campaign_53876-129417.jpg?semt=ais_hybrid"
+                            alt="display image">
+                    </div>
+                    <h3><span>Hello,</span> Yax Jethava</h3>
+
+
+                    <div class="details_user">
+
+                        <p><strong> Email id :</strong> jethvayax99@gmail.com</p>
+                        <p> <strong>Contact number :</strong> 7623853955</p>
+                        <p><strong> My question :</strong> i don't have any question</p>
+
+                    </div>
+                </div> -->
+
+            </div>
+
 
         </section>
+
+
+        <footer>
+            <div class="footer_thank">
+                <span>Thank you</span> for visiting...
+
+                <div class="contact">
+                    <a href="tel:+917623853955">+91 7623853955</a>
+                    <a href="mailto:jethavayax99@gmail.com">jethavayax99@gmail.com</a><br>
+
+                    <p>15, assent buiding, rnikraj road, jesingpra, Amreli-365601</p>
+                </div>
+            </div>
+          
+            <div class="footer-menu">
+                <ul>
+                    <li><a href="#hero-section">Home</a></li>
+                    <li><a href="#cards-main-section">Cars</a></li>
+                    <li><a href="">Blog</a></li>
+                    <li><a href="#reg_form">My Account</a></li>                    
+                </ul>
+            </div>
+        </footer>
         <script src="addCardWith Object.js"></script>
 
     </main>
