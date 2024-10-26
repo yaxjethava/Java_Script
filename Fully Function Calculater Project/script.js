@@ -14,7 +14,6 @@ function clear() {
 }
 
 function equalto() {
-    console.log(display.value)
     display.value = eval(display.value);
     Enter.play();
 
@@ -47,7 +46,7 @@ function back() {
 // for take a multipl value and operatorand butttons value 
 
 // for mouse events
-for (let i = 0; i < btns.length; i++) {
+for (let i = 0; i < btns.length-1; i++) {
 
     btns[i].addEventListener('click', () => {
                 
@@ -76,7 +75,9 @@ for (let i = 0; i < btns.length; i++) {
 
 document.addEventListener('keydown', (event) => {
 
-    console.log(event.key);
+    // console.log(event.key);
+
+
     // condition for cheaking presssed key
     if (event.key === 'C' || event.key === 'c') {
         clear();
