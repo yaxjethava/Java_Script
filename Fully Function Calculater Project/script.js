@@ -14,7 +14,8 @@ function clear() {
 }
 
 function equalto() {
-    display.value = eval(display.value)
+    console.log(display.value)
+    display.value = eval(display.value);
     Enter.play();
 
 }
@@ -62,7 +63,7 @@ for (let i = 0; i < btns.length; i++) {
             equalto();
 
         }
-        else if (textInbtn === '>' || textInbtn === '>') {
+        else if (textInbtn === '>') {
             back();
         }
         else {
@@ -74,6 +75,7 @@ for (let i = 0; i < btns.length; i++) {
 // for keyboard events
 
 document.addEventListener('keydown', (event) => {
+
     console.log(event.key);
     // condition for cheaking presssed key
     if (event.key === 'C' || event.key === 'c') {

@@ -117,6 +117,7 @@ let obj = [
         heading: "Mahindra Scorpio",
         price: 80
     }
+    
 ]
 
 
@@ -201,7 +202,7 @@ form.addEventListener('submit', (event) => {
     dp_div.className = 'dp_div';
 
     //create img for dp div photo
-    let img_dp = document.createElement('img');
+    let img_dp = document    .createElement('img');
     img_dp.src = inputs[inputs.length-1].value;// for taking last value of input
     dp_div.appendChild(img_dp);//add this img into dp_div
 
