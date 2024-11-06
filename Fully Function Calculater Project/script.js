@@ -46,7 +46,7 @@ function back() {
 // for take a multipl value and operatorand butttons value 
 
 // for mouse events
-for (let i = 0; i < btns.length-1; i++) {
+for (let i = 0; i < btns.length; i++) {
 
     btns[i].addEventListener('click', () => {
                 

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slider</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100%;
+        }
+
+        .main-sliders-box {
+            overflow: hidden;
+            width: 1200px;
+            height: 600px;
+            background-color: #ae0d0d;
+            display: flex;
+        }
+
+        .slider img {
+            width: 1200px;
+            height: 600px;
+        }
+
+
+        button {
+            cursor: pointer;
+            margin: 30px;
+            width: 60px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: sans-serif;
+            font-size: 1.2rem;
+            background-color: red;
+            border-radius: 5px;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button onclick="pre()">
+        pre
+    </button>
+    <div class="main-sliders-box">
+
+        <div class="slider">
+            <img src="./hero-image.jpg" alt="">
+        </div>
+
+        <div class="slider">
+            <img src="./BMW i8.jpg" alt="">
+        </div>
+
+        <div class="slider">
+            <img src="./Lamborghini Revuelto.jpg" alt="">
+        </div>
+
+        <div class="slider">
+            <img src="./Bentley-Flying.jpg" alt="">
+        </div>
+
+        <div class="slider">
+            <img src="./rr.jpg" alt="">
+        </div>
+    </div>
+
+    <button onclick="next()">
+        next
+    </button>
+
+    <script>
+        let sliders = document.querySelectorAll(".slider");
+
+        let count = 0;
+        function next() {
+            if (count < sliders.length - 1) {
+                count++
+                console.log(count)
+
+                for (let i = 0; i < sliders.length; i++) {
+                    sliders[i].style.transform = `translateX(${-1200 * count}px)`;
+                    sliders[i].style.transition = "0.7s all";
+                }
+
+            }else{
+                count=0;
+                for (let i = 0; i < sliders.length; i++) {
+                    sliders[i].style.transform = `translateX(${-1200 * count}px)`;
+                    sliders[i].style.transition = "0.7s all";
+                }
+                console.log(count)
+            }
+        }
+
+        function pre() {
+            if (count >= 1) {
+                count--
+                for (let i = 0; i < sliders.length; i++) {
+                    sliders[i].style.transform = `translateX(${-1200 * count}px)`;
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>
