@@ -23,17 +23,19 @@
 
         .main-sliders-box {
             overflow: hidden;
-            width: 1200px;
+            max-width: 1200px;
+            width: 100%;
             height: 600px;
             background-color: #ae0d0d;
             display: flex;
         }
-
+.slider{
+    transition: all 0.7s ;
+}
         .slider img {
+            height: 100%;
             width: 1200px;
-            height: 600px;
         }
-
 
         button {
             cursor: pointer;
@@ -48,12 +50,24 @@
             background-color: red;
             border-radius: 5px;
             border: none;
+            position: absolute;
+            top: 50%;
+            z-index: 999;
         }
+
+        .pre-btn {
+            left: 0px
+        }
+
+        .next-btn {
+            right: 0px
+        }
+
     </style>
 </head>
 
 <body>
-    <button onclick="pre()">
+    <button onclick="pre()" class="pre-btn">
         pre
     </button>
     <div class="main-sliders-box">
@@ -79,7 +93,7 @@
         </div>
     </div>
 
-    <button onclick="next()">
+    <button onclick="next()" class="next-btn">
         next
     </button>
 
@@ -87,34 +101,44 @@
         let sliders = document.querySelectorAll(".slider");
 
         let count = 0;
+
+
         function next() {
+
             if (count < sliders.length - 1) {
                 count++
-                console.log(count)
 
                 for (let i = 0; i < sliders.length; i++) {
                     sliders[i].style.transform = `translateX(${-1200 * count}px)`;
-                    sliders[i].style.transition = "0.7s all";
                 }
 
-            }else{
-                count=0;
+            } else {
+                count = 0;
+
                 for (let i = 0; i < sliders.length; i++) {
                     sliders[i].style.transform = `translateX(${-1200 * count}px)`;
-                    sliders[i].style.transition = "0.7s all";
                 }
                 console.log(count)
             }
         }
 
         function pre() {
+
             if (count >= 1) {
                 count--
+
                 for (let i = 0; i < sliders.length; i++) {
                     sliders[i].style.transform = `translateX(${-1200 * count}px)`;
                 }
             }
         }
+
+        setInterval(() => {
+            console.log('slider is on')
+            next();
+        }, 3000);
+
+
     </script>
 </body>
 
