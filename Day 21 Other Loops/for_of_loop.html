@@ -1,0 +1,28 @@
+<script>
+    let arr = [
+        {
+            fruit: "Apple",
+            price: 200,
+            stock: true
+        },
+        {
+            fruit: "Banana",
+            price: 50,
+            stock: false
+        },
+        {
+            fruit: "Kiwi",
+            price: 500,
+            stock: true
+        }
+    ];
+
+    //both give a same value or same result but for of not give index number only give value's
+
+    for (let data of arr) {
+        console.log(data.stock)
+    }
+    arr.forEach((val,i) => {
+        console.log(val.fruit)
+    })
+</script>
