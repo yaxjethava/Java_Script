@@ -1,3 +1,88 @@
 <script>
-    
+    // Abstraction
+
+    //parent
+    class User {
+        constructor(name, pass, num) {
+            this.uname = name;
+            this.pass = pass;
+            this.number = num;
+        }
+
+        basicDetails() {
+            throw new Error('Username,Password and Number are not find !')
+        }
+        allDetails() {
+            throw new Error('More details are not find!')
+        }
+    }
+
+    class userInfo extends User {
+        constructor(name, pass, num, email, city, gendar) {
+            super(name, pass, num);
+            this.email_id = email
+            this.place = city
+            this.gendar = gendar
+        }
+        //overwriting methods make abstract
+        basicDetails() {
+            console.log(`Username : ${this.uname}`)
+            console.log(`Password : ${this.pass}`)
+            console.log(`Number : ${this.number}`)
+        }
+
+        allDetails() {
+            this.basicDetails();
+            console.log(`Email : ${this.email_id}`)
+            console.log(`Number : ${this.place}`)
+            console.log(`City : ${this.place}`)
+            console.log(`Gendar : ${this.gendar}`)
+        }
+    }
+
+    class userdetails extends User {
+        constructor(name, pass, num, email, city, gendar) {
+            super(name, pass, num);
+            this.email_id = email
+            this.place = city
+            this.gendar = gendar
+        }
+
+        //overwriting methods make abstract
+        basicDetails() {
+            console.log(`Username : ${this.uname}`)
+            console.log(`Password : ${this.pass}`)
+            console.log(`Number : ${this.number}`)
+        }
+    }
+
+    let ramu = new userInfo("Ramu", "123asd@#@#$", 123456789, "ramu@gmail.com", "Amreli", "Male")
+    let mohit = new userdetails("Mohit", "12sdafsd52#@#$", 785695233, "mohit5@gmail.com", "Ahmedabad", "MMale")
+
+
+    ////////for all details methods
+    try {
+        ramu.allDetails()//speling mistake, so here give an error from catch
+    } catch (e) {
+        console.log(e)
+    }
+
+    ///////for basic details methods
+    try {
+        ramu.basicDetails()
+    } catch (e) {
+        console.log(e)
+    }
+    //////////////for mohit details run methos
+    try {
+        mohit.basicDetails()
+    } catch (e) {
+        console.log(e)
+    }
+    // for un-define method
+    try {
+        mohit.allDetails()//here basicDetails Method are not define 
+    } catch (e) {
+        console.log(e)
+    }
 </script>
