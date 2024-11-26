@@ -1,0 +1,38 @@
+<script>
+    // take and getting cars details from Inheritance
+    // inheritance(parent and child)
+
+    //parent
+    class Car_details {
+        constructor(company, name, model, engin) {
+            this.company = company
+            this.car_name = name
+            this.model = model
+            this.engin = engin
+        }
+
+        car_det() {
+        return `This cars is from ${this.company} and that is ${this.car_name} of ${this.model}, that have ${this.engin} cc engin`
+        }
+    }
+
+    //child
+    class Car_privat_info extends Car_details {
+        constructor(company, name, model, engin, price, color, eng_no) {
+            super(company, name, model, engin)
+            this.price = price
+            this.color = color
+            this.engin_no = eng_no
+        }
+
+        privat_info() {
+            return `${this.car_det()},that's color is ${this.color} and price are ${this.price}$. Their engin number is ${this.engin_no}`
+        }
+    }
+
+
+    let audi = new Car_privat_info("Audi", "Q3", 2022, 5500, 123, "White", "498378212dflw");
+    console.log(audi.car_det());
+    console.log(audi.privat_info());
+       
+</script>

@@ -1,0 +1,31 @@
+<script>
+    // make encapsulation opps for take students result
+
+    class Result {
+
+        constructor(s_name, std, m_maths, m_science, m_computer, m_business) {
+            this.name = s_name
+            this.std = std
+            this.maths = m_maths
+            this.science = m_science
+            this.computer = m_computer
+            this.business = m_business
+        }
+
+        info() {
+            console.log(`Student name is ${this.name}`, `Standard ${this.std}`, `Marks of Maths : ${this.maths}`, `Marks of Science ${this.science}`, `Marks of Computer ${this.computer}`, `Marks of Business ${this.business}`)
+        }
+
+        result() {
+            let total = this.maths + this.business + this.computer + this.science;
+            console.log(`Total marks :${total}`);
+            console.log(`Percentages are ${total / 4}`);
+        }
+    }
+
+    let raj = new Result("RAJ", 12, 60, 56, 86, 95);
+    let krishna = new Result("Krishna", 11, 82, 90, 89, 89);
+
+    raj.result()
+    krishna.result()
+</script>
