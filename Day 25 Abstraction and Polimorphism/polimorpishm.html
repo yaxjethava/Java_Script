@@ -1,0 +1,57 @@
+<script>
+    //Polymorphism practice
+
+    //Parant
+    class Car {
+        constructor(car_name, model, color, reg_year, price, passing) {
+            this.car_n = car_name
+            this.model = model
+            this.color = color
+            this.reg_year = reg_year
+            this.price = price
+            this.passing = passing
+        }
+
+        carInfo() {
+            console.log(`Company : ${this.cmp}`);
+            console.log(`Name : ${this.car_n}`);
+            console.log(`Model : ${this.model}`);
+            console.log(`Color : ${this.color}`);
+            console.log(`Registration Year : ${this.reg_year}`)
+            console.log(`Price : ${this.price}`)
+            console.log(`Passing  : ${this.passing}`)
+        }
+    }
+
+    //Child 1
+    class BMW extends Car {
+        constructor(car_name, model, color, reg_year, price, passing) {
+            super(car_name, model, color, reg_year, price, passing)
+            this.cmp = "BMW"
+        }
+        carInfo() {
+            super.carInfo()
+        }
+    }
+
+    //Clid 2
+    class Bentaly extends Car {
+        constructor(com, car_name, model, color, reg_year, price, passing) {
+            super(com, car_name, model, color, reg_year, price, passing)
+            this.cmp = "Bentaly"
+        }
+        carInfo() {
+            console.log(`
+            Company : ${this.cmp},
+            Name : ${this.car_n},
+            Model : ${this.model},
+            Color : ${this.color},
+            Passing  : ${this.passing}`);
+        }
+    }
+
+    let bmw = new BMW("i8", 2020, "blue", 2021, "7 CR", "GJ 14")
+    let bentaly = new Bentaly("Bentayga", 2022, "Black", 2022, "8 CR", "GJ 14")
+    bmw.carInfo()
+    bentaly.carInfo()
+</script>
