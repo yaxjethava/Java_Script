@@ -1,0 +1,28 @@
+<script>
+
+    let promices = new Promise((resolve, reject) => {
+
+        let value = false
+
+        if (value) {
+            let a = (prompt(`Enter your first name`))
+            let b = (prompt('Enter your last name'))
+            resolve(alert(`Hello, ${a} ${b} !`))
+        } 
+        else {
+            reject(`This promise is incompleted`)
+        }
+    });
+
+    promices
+        .then((r) => {
+            console.log(r)
+        })
+        .catch(e => {
+            console.log(e)
+        })
+        .finally(() => {
+            console.log(`This is message from final block`)
+        })
+
+</script>

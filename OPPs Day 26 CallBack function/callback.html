@@ -1,0 +1,34 @@
+<script>
+    //make parent function that call another function
+    function calc(a, b, callback) {
+        console.log(callback(a, b));
+    }
+
+    //make seperate functions of every calculation
+    function add(x, y) {
+        return x + y
+    }
+
+    function sub(x, y) {
+        return x - y
+    }
+
+    function multi(x, y) {
+        return x * y
+    }
+
+    function div(x, y) {
+        return x / y
+    }
+
+    function mod(x, y) {
+        return x % y
+    }
+
+
+    let addition = calc(20, 30, add)
+    let substraction = calc(20, 30, sub)
+    let multiplication = calc(20, 30, multi)
+    let division = calc(20, 30, div)
+    let modulo = calc(50, 4, mod)
+</script>
