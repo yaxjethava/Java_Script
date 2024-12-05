@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="https://cdn-icons-png.flaticon.com/256/616/616554.png&quot" width="45%" id="image">
+
+
+    <button onclick="getDog()">New Dog</button>
+
+    <script>
+        const getDog = async () => {
+
+            try {
+                let res = await fetch('https://dog.ceo/api/breeds/image/');
+
+                let final = await res.json();
+
+                let img = document.getElementById('image');
+
+                img.src = final.message
+                console.log(final.message)
+            } catch (err) {
+                console.log(err)
+            }   
+
+        }
+    </script>
+</body>
+
+</html>

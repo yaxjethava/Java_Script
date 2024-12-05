@@ -1,0 +1,28 @@
+<script>
+
+    let obj = [
+        {
+            Name: "Raju",
+            City: "Amreli",
+            Pincode: 365601,
+            Age: 20,
+            Bank_balance: 200000
+        },
+        {
+            Name: "Kaju",
+            City: "Melia",
+            Pincode: 365605,
+            Age: 99,
+            Bank_balance: 1800
+        }]
+
+
+    //convert OBJECT or ARRAY into JSON formate
+    let json_formate = JSON.stringify(obj)
+    console.log(json_formate)
+
+    //convert that JSON formate into their real formate
+    let parse_formate = JSON.parse(json_formate)
+    console.log(parse_formate)
+
+</script>

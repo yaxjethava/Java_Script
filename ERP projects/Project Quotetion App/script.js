@@ -45,16 +45,32 @@ img.src = obj[0].img
 let count = 0;
 
 btn.addEventListener('click', () => {
-    if (count < obj.length - 1) {
-        count++;
-        console.log(count)
 
-    } else {
-        count = 0;
-        console.log("from else : " + count)
-    }
-    qoutetions.textContent = obj[count].qoute
-    name.textContent = obj[count].name
-    img.src = obj[count].img
+    // Add fade-out animition
+    qoutetions.classList.add("fade");
+    img.classList.add("fade");
+    name.classList.add("fade");
 
+    setTimeout(() => {//adding setout for animation smoothness
+
+        if (count < obj.length - 1) {
+            count++;
+            console.log(count)
+
+        } else {
+            count = 0;
+            console.log("from else : " + count)
+        }
+
+
+        qoutetions.textContent = obj[count].qoute
+        name.textContent = obj[count].name
+        img.src = obj[count].img
+
+        // Remove fade-out Animition
+        qoutetions.classList.remove("fade");
+        img.classList.remove("fade");
+        name.classList.remove("fade");
+
+    }, 800);
 })

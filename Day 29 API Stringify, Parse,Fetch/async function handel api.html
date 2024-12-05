@@ -1,0 +1,16 @@
+<script>
+
+    async function fetchApi() {
+        try {
+            let fetchApi = await fetch("https://jsonplaceholder.typicode.com/todos")
+            console.log(fetchApi)
+
+            let resolveApi = await fetchApi.json()
+            console.log(resolveApi)
+
+        } catch (error) {
+            console.log(error)
+        }
+    }
+    fetchApi()
+</script>

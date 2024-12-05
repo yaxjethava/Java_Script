@@ -1,0 +1,20 @@
+<script>
+
+    async function get_request() {
+
+        try {
+            let id_number = parseFloat(prompt('Enter id number'));
+            let result = await fetch(`http://localhost:3000/ser/${id_number}`);
+
+            if (result.ok == false) {
+                throw new Error('Your id number is not available')
+            }
+            let final_res = await result.json()
+            console.log(final_res)
+
+        } catch (e) {
+            console.log(e);
+        }
+    }
+    get_request()
+</script>

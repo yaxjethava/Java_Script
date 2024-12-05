@@ -18,6 +18,7 @@ body {
 }
 
 .main-wrapper {
+    overflow: hidden;
     backdrop-filter: blur(3px);
     padding: 1%;
     background-color: rgba(253, 253, 253, 0.269);
@@ -110,5 +111,46 @@ body {
 #btn:hover {
     transition: 0.3s all ease-in-out;
     background-color: #d8bdbd;
-color: #976727;
+    color: #976727;
+}
+
+.fade {
+    opacity: 0;
+    transition: opacity 0.8s ease-in-out;
+}
+
+@media (max-width:426px) {
+    .main-wrapper {
+        padding: 7% 7% 0 7%;
+        width: 85%;
+        height: 450px;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .left-box {
+        width: 100%;
+        height: 60%;
+        padding: 0;
+    }
+    #qoutetion {
+        width: 100%;
+        padding: 5% 4%;
+    }
+    .right-box {
+        display: flex;
+        flex-direction: column-reverse;
+        width: 100%;
+        height: 40%;
+    }
+    #name{
+        height: 20%;
+        justify-content: flex-end;
+    }
+    #img {
+        height: 80%;
+        align-items: flex-end;
+    }
+    #img img{
+        height: 100%;
+    }
 }

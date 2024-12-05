@@ -1,0 +1,24 @@
+<script>
+
+    let promise = new Promise((resolve, reject) => {
+        let condition = true;
+
+        if (condition) {
+            resolve("The Promise is Resolves")
+        } else {
+            reject("The Promise is Rejected")
+        }
+    })
+
+    async function result() {
+        try {
+            // const promiseAdd = await promise;
+            console.log(promiseAdd = await promise);
+        } catch (e) {
+            console.log(e)
+        } finally {
+            console.log("This message put from finally block")
+        }
+    }
+    result()
+</script>
