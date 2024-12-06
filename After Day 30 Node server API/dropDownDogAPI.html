@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Dorp Down</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .img-box {
+        margin: 0 auto;
+        width: 500px;
+        height: 300px;
+        border: 1px solid black;
+    }
+    img{
+        width: 100%;
+        height: 100%;
+    }
+</style>
+
+<body>
+
+    <h1>Drop down Dog selector</h1>
+
+    <select name="breed" id="selectTag">
+        <option value="boxer">Boxer</option>
+        <option value="affenpinscher">Affenpinscher</option>
+        <option value="african">African</option>
+        <option value="briard">Briard</option>
+        <option value="borzoi">Borzoi</option>
+        <option value="cockapoo">Cockapoo</option>
+        <option value="chow">Chow</option>
+    </select>
+
+    <div class="img-box">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSAU62gu4ZQud__I-GvMCklc81rLIS_XV7X5GyHo5hY3Ih1Avv5VCtUviqksisl_jMPJfU&usqp=CAU" alt="dog">
+    </div>
+</body>
+<script>
+    let select = document.getElementById("selectTag");
+    let options = select.querySelectorAll("option");
+    let imageBox = document.querySelector(".img-box img")
+    let value;
+
+    console.log(imageBox)
+    select.addEventListener('click', () => {
+        value = select.value;
+        dogApi(value)
+        console.log(value)
+    })
+
+    async function dogApi(breed) {
+
+        try {
+            let api = await fetch(`https://dog.ceo/api/breed/${breed}/images/random`);
+            let final = await api.json();
+            console.log(final.message);
+            imageBox.src = final.message;
+        } catch (e) {
+            console.log(e)
+        }
+    }
+
+</script>
+
+</html>
