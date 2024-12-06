@@ -57,7 +57,6 @@
     }
 
     .card p {
-
         margin: 10px;
         color: rgb(11, 141, 255);
         font-size: 1.05rem;
@@ -77,8 +76,16 @@
 
         async function getMovieData() {
 
+            const options = {
+                method: 'GET',
+                headers: {
+                    accept: 'application/json',
+                    Authorization: 'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJiMzMyOTczZWE0MjgzOTdhM2Q3MzI1OTE0MDdiMzIxNCIsIm5iZiI6MTczMzQwNzI5NC45Njk5OTk4LCJzdWIiOiI2NzUxYjIzZTgwZTViOGYwYTc1NjEyNjMiLCJzY29wZXMiOlsiYXBpX3JlYWQiXSwidmVyc2lvbiI6MX0.paPtYr15-7e3Mp44c-FM58fGCBt-kiE39XKEdrKYAEU'
+                }
+            };
+
             try {
-                let getResult = await fetch("https://api.themoviedb.org/3/trending/all/day?language=en-US&#39");
+                let getResult = await fetch('https://api.themoviedb.org/3/trending/all/day?language=en-US', options);
                 let resolveResult = await getResult.json();
 
                 // take only results for movie data

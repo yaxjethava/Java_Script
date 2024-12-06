@@ -8,26 +8,29 @@
 </head>
 
 <body>
-    <img src="https://cdn-icons-png.flaticon.com/256/616/616554.png&quot" width="45%" id="image">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQqkU7BOPCgtUP9xADYThDDylpcWFUjB52YFQ&s" width="45%"
+        height="40%" id="image">
 
 
-    <button onclick="getDog()">New Dog</button>
+    <button style="position: fixed;bottom: 20px;" onclick="getDog()">New Dog</button>
 
     <script>
         const getDog = async () => {
 
             try {
-                let res = await fetch('https://dog.ceo/api/breeds/image/');
+                let res = await fetch('https://dog.ceo/api/breeds/image/random');
 
+                // console.log(res.json())
                 let final = await res.json();
-
+                console.log(final)
                 let img = document.getElementById('image');
 
                 img.src = final.message
                 console.log(final.message)
+
             } catch (err) {
                 console.log(err)
-            }   
+            }
 
         }
     </script>
