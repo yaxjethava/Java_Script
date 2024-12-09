@@ -1,0 +1,32 @@
+[
+    {
+        "id": "1",
+        "brand": "Zara",
+        "size": [
+            "xl",
+            "m",
+            "l",
+            "xxl"
+        ],
+        "color": "red"
+    },
+    {
+        "id": "2",
+        "brand": "England",
+        "size": [
+            "m",
+            "l"
+        ],
+        "color": "Gray"
+    },
+    {
+        "id": "3",
+        "brand": "Devland",
+        "size": [
+            "m",
+            "l",
+            "xxx"
+        ],
+        "color": "Pink"
+    }
+]

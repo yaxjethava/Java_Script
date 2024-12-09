@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloths cards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .div {
+            border: 1px solid black;
+            width: 250px;
+            height: 150px;
+        }
+
+        span {
+            font-size: 1rem;
+            border: 1px solid black;
+        }
+
+        .div2 {
+            width: 100%;
+            display: flex;
+            gap: 15px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="main_row"></div>
+
+</body>
+<script>
+    let row = document.getElementById("main_row");
+
+    async function card_maker() {
+
+
+        try {
+
+            let api = await fetch("cloth.json");
+            let result = await api.json();
+
+            console.log(result)
+            result.forEach((data) => {
+                let div = document.createElement("div");
+                div.className = "div"
+                let h1 = document.createElement("h1");
+                h1.textContent = data.brand;
+                div.appendChild(h1);
+
+                let div2 = document.createElement("div");
+                div2.className = "div2"
+
+                data.size.forEach((size) => {
+                    let span = document.createElement("span");
+                    span.textContent = size;
+
+                    div2.appendChild(span)
+                });
+                div.appendChild(div2)
+
+                let color = document.createElement("p");
+                color.textContent = data.color;
+                div.appendChild(color);
+                console.log(div)
+                row.appendChild(div)
+            });
+            
+        } catch (e) {
+            console.log(e)
+        }
+
+    }
+
+    card_maker()
+</script>
+
+</html>
